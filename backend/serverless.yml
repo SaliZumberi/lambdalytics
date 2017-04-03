@@ -1,0 +1,29 @@
+service: SimpleSentimentAnalysisApp 
+provider:
+  name: aws
+  runtime: nodejs6.10
+functions:
+  app:
+    handler: handler3.app
+    events:
+     - http: ANY {proxy+}
+        # path: /
+        # method: get
+  # resetMonitoring:
+  #   handler: handler3.resetMonitoring
+  #   events:
+  #   - http: 
+  #       path: /resetMonitoring
+  #       method: get
+  # beginMonitoring:
+  #   handler: handler3.beginMonitoring
+  #   events:
+  #   - http: 
+  #       path: /beginMonitoring
+  #       method: get
+  # sentimentImage:
+  #   handler: handler3.sentimentImage
+  #   events:
+  #   - http: ANY {proxy+}
+  #       path: /sentimentImage
+  #       method: get
